@@ -50,7 +50,7 @@ async def init():
         pass
     await Istkhar.decorators()
     LOGGER("IstkharMusic").info(
-      "-1002447776304"
+      "-1002388010839"
     )
     await idle()
     await app.stop()
