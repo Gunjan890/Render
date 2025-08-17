@@ -1,12 +1,10 @@
 import asyncio
 import importlib
-
 from pyrogram import idle
-from pytgcalls.exceptions import NoActiveGroupCall
 
 import config
 from IstkharMusic import LOGGER, app, userbot
-from IstkharMusic.core.call import Istkhar
+from IstkharMusic.core.call import RAUSHAN
 from IstkharMusic.misc import sudo
 from IstkharMusic.plugins import ALL_MODULES
 from IstkharMusic.utils.database import get_banned_users, get_gbanned
@@ -14,8 +12,6 @@ from config import BANNED_USERS
 
 # Import and start keep-alive server
 from keep_alive import keep_alive
-
-
 
 
 async def init():
@@ -26,8 +22,10 @@ async def init():
         and not config.STRING4
         and not config.STRING5
     ):
-        LOGGER(__name__).error("Assistant client variables not defined, exiting...")
-        exit()
+        LOGGER(name).error(
+            "𝐒𝐭𝐫𝐢𝐧𝐠 𝐒𝐞𝐬𝐬𝐢𝐨𝐧 𝐍𝐨𝐭 𝐅𝐢𝐥𝐥𝐞𝐝, 𝐏𝐥𝐞𝐚𝐬𝐞 𝐅𝐢𝐥𝐥 𝐀 𝐏𝐲𝐫𝐨𝐠𝐫𝐚𝐦 V2 𝐒𝐞𝐬𝐬𝐢𝐨𝐧🤬"
+        )
+
     await sudo()
     try:
         users = await get_gbanned()
@@ -41,26 +39,15 @@ async def init():
     await app.start()
     for all_module in ALL_MODULES:
         importlib.import_module("IstkharMusic.plugins" + all_module)
-    LOGGER("IstkharMusic.plugins").info("Successfully Imported Modules...")
+    LOGGER("IstkharMusic.plugins").info("𝐀𝐥𝐥 𝐅𝐞𝐚𝐭𝐮𝐫𝐞𝐬 𝐋𝐨𝐚𝐝𝐞𝐝 𝐁𝐚𝐛𝐲🥳...")
     await userbot.start()
-    await Istkhar.start()
-    try:
-        await Istkhar.stream_call("https://te.legra.ph/file/29f784eb49d230ab62e9e.mp4")
-    except NoActiveGroupCall:
-        LOGGER("IstkharMusic").error(
-            "Please turn on the videochat of your log group\channel.\n\nStopping Bot..."
-        )
-        exit()
-    except:
-        pass
-    await Istkhar.decorators()
-    LOGGER("IstkharMusic").info(
-      "-1002388010839"
-    )
+    await RAUSHAN.start()
+    await RAUSHAN.decorators()
+    LOGGER("IstkharMusic").info("╔═════ஜ۩۞۩ஜ════╗\n  ♨️𝗠𝗔𝗗𝗘 𝗕𝗬 𝗔𝗟𝗣𝗛𝗔♨️\n╚═════ஜ۩۞۩ஜ════╝")
     await idle()
     await app.stop()
     await userbot.stop()
-    LOGGER("IstkharMusic").info("Stopping Istkhar Music Bot...")
+    LOGGER("IstkharMusic").info("╔═════ஜ۩۞۩ஜ════╗\n  ♨️𝗠𝗔𝗗𝗘 𝗕𝗬 𝗔𝗟𝗣𝗛𝗔♨️\n╚═════ஜ۩۞۩ஜ════╝")
 
 
 if __name__ == "__main__":
