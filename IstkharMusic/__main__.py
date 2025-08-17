@@ -4,7 +4,7 @@ from pyrogram import idle
 
 import config
 from IstkharMusic import LOGGER, app, userbot
-from IstkharMusic.core.call import RAUSHAN
+from IstkharMusic.core.call import Istkhar
 from IstkharMusic.misc import sudo
 from IstkharMusic.plugins import ALL_MODULES
 from IstkharMusic.utils.database import get_banned_users, get_gbanned
@@ -53,3 +53,4 @@ async def init():
 if __name__ == "__main__":
     keep_alive()  # Start the web server for Render
     asyncio.get_event_loop().run_until_complete(init())
+
